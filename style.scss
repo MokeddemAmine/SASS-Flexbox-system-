@@ -1,0 +1,88 @@
+// deffrent screens:
+$min-small:'(min-width:576px)';
+$min-medium:'(min-width:768px)';
+$min-large:'(min-width:992px)';
+$min-xlarge:'(min-width:1200px)';
+
+$width-md:750px;
+$width-lg:970px;
+$width-xl:1170px;
+
+*{
+    box-sizing: border-box;
+}
+.container{
+    padding-left:15px;
+    padding-right:15px;
+    margin-left:auto;
+    margin-right:auto;
+    @media #{$min-medium}{
+        &{
+            width:$width-md;
+        }
+    }
+    @media #{$min-large}{
+        &{
+            width:$width-lg;
+        }
+    }
+    @media #{$min-xlarge}{
+        &{
+            width:$width-xl;
+        }
+    }
+}
+
+
+.d-flex{
+    display:flex;
+    flex-wrap:wrap;
+}
+img{
+    object-fit:cover;
+    width: 100%;
+}
+h2{
+    background-color: black;
+    color:white;
+    padding:.2rem;
+    text-align:center;
+}
+// number of column divised the system with flex
+$grid_col:12;
+
+@for $i from 1 through $grid_col{
+    .col-#{$i}{
+        width:percentage($i / $grid_col);
+    }
+}
+@media #{$min-small}{
+    @for $i from 1 through $grid_col{
+            .col-sm-#{$i}{
+                width:percentage($i / $grid_col);
+            }
+    }
+}
+@media #{$min-medium}{
+    @for $i from 1 through $grid_col{
+        .col-md-#{$i}{
+            width:percentage($i / $grid_col);
+        }
+    }
+}
+@media #{$min-large}{
+    @for $i from 1 through $grid_col{
+        .col-lg-#{$i}{
+            width:percentage($i / $grid_col);
+        }
+    }
+}
+@media #{$min-xlarge}{
+    @for $i from 1 through $grid_col{
+        .col-xl-#{$i}{
+            width:percentage($i / $grid_col);
+        }
+    }
+}
+
+
